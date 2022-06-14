@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>가위바위보</title>
+		<style>
+			h1 {
+				font-size: 5rem;
+			}
+			.startBtn {
+				font-size: 2rem;
+				padding: 8px 18px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="startBtn">Reset</button>
+		<h1>가위</h1>
+
+		<script>
+			window.addEventListener('DOMContentLoaded', function () {
+				const btn = document.querySelectorAll('.startBtn')[0];
+				const h1 = document.getElementsByTagName('h1')[0];
+
+				const handArr = ['가위', '바위', '보'];
+
+				btn.addEventListener('click', function () {
+					let num = Math.round(Math.random() * (handArr.length - 1));
+					console.log(num);
+					h1.innerHTML = handArr[num];
+				});
+			});
+		</script>
+	</body>
+</html>
